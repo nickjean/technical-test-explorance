@@ -1,0 +1,29 @@
+<div class="container">
+	<fieldset>
+		<legend>Read/Show</legend>
+		<p> Search :
+			<input type="text" />
+        </p>
+			<br />
+			<table>
+				<tbody>
+					<tr>
+						<th>Name</th>
+						<th>Family</th>
+						<th>Birthday</th>
+						<th>Actions</th>
+					</tr>
+					<tr *ngFor="let user of users; let i = index">
+						<td>{{user.name}}</td>
+						<td>{{user.family}}</td>
+						<td>{{user.birthday}}</td>
+						<td>
+							<input (click)="add()" type="button" value="Add" />
+							<input (click)="delete(i)" type="button" value="Delete" />
+							<input (click)="setEditUser(i)" type="button" value="Edit" />
+              </td>
+					</tr>
+				</tbody>
+			</table>
+	</fieldset>
+</div>
